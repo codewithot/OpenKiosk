@@ -16,7 +16,7 @@ export interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({
   eyebrow = 'From first sale to full brand',
-  title = 'Bring your kiosk online. No code, no agency.',
+  title = 'Launch your own online store. No code, no agency.',
   description = 'Every business on OpenKiosk, from a one-person stall to a growing brand, gets its own storefront, catalog, checkout and customer data. Set it up in an afternoon, shape it visually, promote it with built-in ads, and manage it from web or phone.',
   primaryCtaText = 'Start your store',
   primaryCtaHref = '#start',

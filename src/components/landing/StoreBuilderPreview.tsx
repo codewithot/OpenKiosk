@@ -108,7 +108,7 @@ export const StoreBuilderPreview: React.FC<StoreBuilderPreviewProps> = ({ classN
       accentText: 'text-amber-400',
       badgeBg: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
       ctaBtn: 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold',
-      cartBadge: 'bg-amber-500 text-slate-950',
+      cartBadge: 'bg-slate-950 text-white',
       activeRing: 'ring-amber-500',
     },
     slate: {
@@ -118,7 +118,7 @@ export const StoreBuilderPreview: React.FC<StoreBuilderPreviewProps> = ({ classN
       accentText: 'text-blue-400',
       badgeBg: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
       ctaBtn: 'bg-blue-600 hover:bg-blue-500 text-white font-bold',
-      cartBadge: 'bg-blue-600 text-white',
+      cartBadge: 'bg-slate-950 text-white',
       activeRing: 'ring-blue-500',
     },
     matcha: {
@@ -128,7 +128,7 @@ export const StoreBuilderPreview: React.FC<StoreBuilderPreviewProps> = ({ classN
       accentText: 'text-emerald-400',
       badgeBg: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
       ctaBtn: 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold',
-      cartBadge: 'bg-emerald-500 text-slate-950',
+      cartBadge: 'bg-slate-950 text-white',
       activeRing: 'ring-emerald-500',
     },
     terracotta: {
@@ -138,7 +138,7 @@ export const StoreBuilderPreview: React.FC<StoreBuilderPreviewProps> = ({ classN
       accentText: 'text-orange-400',
       badgeBg: 'bg-orange-500/20 text-orange-300 border-orange-500/30',
       ctaBtn: 'bg-orange-500 hover:bg-orange-400 text-slate-950 font-bold',
-      cartBadge: 'bg-orange-500 text-slate-950',
+      cartBadge: 'bg-slate-950 text-white',
       activeRing: 'ring-orange-500',
     },
   }
@@ -311,7 +311,7 @@ export const StoreBuilderPreview: React.FC<StoreBuilderPreviewProps> = ({ classN
                   <span className="hidden sm:inline text-slate-500 font-medium">Reviews</span>
                   <button
                     type="button"
-                    className={`inline-flex items-center gap-1 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[11px] font-bold shadow-2xs transition-all shrink-0 cursor-pointer ${currentTheme.cartBadge}`}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold shadow-2xs transition-all shrink-0 cursor-pointer bg-slate-950 hover:bg-slate-900 text-white"
                     title="Cart"
                   >
                     <span className="text-xs">🛒</span>
@@ -424,22 +424,18 @@ export const StoreBuilderPreview: React.FC<StoreBuilderPreviewProps> = ({ classN
                         <button
                           type="button"
                           onClick={() => handleAddToCart(product.id)}
-                          className={`px-2 py-0.5 rounded-md text-[10px] font-bold transition-all flex items-center gap-0.5 cursor-pointer ${
+                          title="Add to cart"
+                          aria-label={`Add ${product.name} to cart`}
+                          className={`w-6 h-6 rounded-md text-[11px] font-bold transition-all flex items-center justify-center cursor-pointer shrink-0 ${
                             wasJustAdded
                               ? 'bg-emerald-600 text-white'
                               : 'bg-slate-900 hover:bg-slate-800 text-white'
                           }`}
                         >
                           {wasJustAdded ? (
-                            <>
-                              <Check className="w-2.5 h-2.5" />
-                              <span>Added</span>
-                            </>
+                            <Check className="w-3 h-3 stroke-[2.5]" />
                           ) : (
-                            <>
-                              <Plus className="w-2.5 h-2.5" />
-                              <span>Add</span>
-                            </>
+                            <Plus className="w-3 h-3 stroke-[2.5]" />
                           )}
                         </button>
                       </div>

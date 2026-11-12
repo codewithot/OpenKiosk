@@ -15,7 +15,6 @@ const defaultNavItems: NavItem[] = [
   { label: 'Product', href: '/#features' },
   { label: 'How it works', href: '/how-it-works' },
   { label: 'Pricing', href: '/#pricing' },
-  { label: 'Developers', href: '#developers' },
 ]
 
 export const Navbar: React.FC<NavbarProps> = ({
